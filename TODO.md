@@ -7,9 +7,9 @@
         [x] unit - varchar (20)
         [x] purchased - boolean DEFAULT false
 -SERVER
-    -[] create GET route
-        -[] items display by name ORDER BY NAME and PURCHASED
-    -[] create POST route
+    -[x] create GET route
+        -[x] items display by name ORDER BY NAME and PURCHASED
+    -[x] create POST route
     -[] PUT route
     -[] DELETE route
         -[] conditional to determine which delete button is clicked
@@ -23,7 +23,7 @@
     -[] CLEAR button to remove all items from the list
     -[x] ComponentDidMount
     -[x] GET route
-    -[] POST route
+    -[x] POST route
     -[] PUT route
     -[] DELETE route 
         -[] one route to remove single item
