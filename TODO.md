@@ -1,15 +1,15 @@
 - DATABASE
-    -[] create database - `fs-react-shopping`
-    -[] make table
-        [] id
-        [] name - varchar (80)
-        [] quantity - decimal nums
-        [] unit - varchar (20)
-        [] purchased - boolean DEFAULT false
+    -[x] create database - `fs-react-shopping`
+    -[x] make table
+        [x] id
+        [x] name - varchar (80)
+        [x] quantity - decimal nums
+        [x] unit - varchar (20)
+        [x] purchased - boolean DEFAULT false
 -SERVER
     -[] create GET route
         -[] items display by name ORDER BY NAME and PURCHASED
-    -[] createe POST route
+    -[] create POST route
     -[] PUT route
     -[] DELETE route
         -[] conditional to determine which delete button is clicked
@@ -21,8 +21,8 @@
         [] units
     -[] RESET button to clear purchased items
     -[] CLEAR button to remove all items from the list
-    -[] ComponentDidMount
-    -[] GET route
+    -[x] ComponentDidMount
+    -[x] GET route
     -[] POST route
     -[] PUT route
     -[] DELETE route 
