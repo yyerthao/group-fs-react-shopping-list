@@ -18,7 +18,8 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
     const newItem = req.body;
-    const sqlText = `INSERT INTO shopping_list ("name", "quantity", "unit") VALUES 
+    console.log(newItem);
+    const sqlText = `INSERT INTO shopping_list (name, quantity, unit) VALUES 
         ($1, $2, $3);`;
     // Let sql sanitize your inputs (NO Bobby Drop Tables here!)
     // the $1, $2, etc get substituted with the values from the array below
