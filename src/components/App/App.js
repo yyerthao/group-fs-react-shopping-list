@@ -26,6 +26,27 @@ class App extends Component {
     }) // end catch
   } // end getList function
 
+  // POST request
+  addItem = () => {
+    let newItem = {
+      name: '',
+      quantity: '',
+      unit: '',
+    }   
+    axios.post('/list', newItem) 
+    .then( (response) => {
+      console.log('Response:', response);
+      this.getList()
+    })
+    .catch( (error)=> {
+      alert('Something bad happened');
+      console.log('Error', error)
+    })
+  }
+
+
+
+
   render() {
     return (
       <div className="App">
