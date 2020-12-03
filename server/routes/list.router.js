@@ -1,3 +1,5 @@
+
+
 const express = require('express');
 const router = express.Router();
 const pool = require('../modules/pool.js');
@@ -29,7 +31,7 @@ router.post('/', (req, res) => {
         })
         .catch((error) => {
             console.log(`Error making database query ${sqlText}`, error);
-            res.sendStatus(500); // Good server always responds
+            res.sendStatus(500);
         })
 })
 
