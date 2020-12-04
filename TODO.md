@@ -15,10 +15,10 @@
         -[] conditional to determine which delete button is clicked
 
 -CLIENT
-    -[] form to add new items
-        [] item name
-        [] quantity
-        [] units
+    -[x] form to add new items
+        [x] item name
+        [x] quantity
+        [x] units
     -[] RESET button to clear purchased items
     -[] CLEAR button to remove all items from the list
     -[x] ComponentDidMount

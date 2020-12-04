@@ -5,7 +5,12 @@ import './App.css';
 class App extends Component {
 
   state = {
-    ourList: []
+    ourList: [],
+    newItem: {
+      name: '',
+      quantity: '',
+      unit: ''
+    }
   }
 
   componentDidMount() {
@@ -27,13 +32,9 @@ class App extends Component {
   } // end getList function
 
   // POST request
-  addItem = () => {
-    let newItem = {
-      name: '',
-      quantity: '',
-      unit: '',
-    }   
-    axios.post('/list', newItem) 
+  addItem = (event) => {
+    event.preventDefault();
+    axios.post('/list', this.state.newItem) 
     .then( (response) => {
       console.log('Response:', response);
       this.getList()
@@ -44,19 +45,42 @@ class App extends Component {
     })
   }
 
-
-
+  handleChange = (event, propertyName) => {
+    console.log('Handling the change', event.target.value)
+    this.setState({
+      newItem: {
+        ...this.state.newItem,
+        [propertyName]: event.target.value
+      }
+    })
+  }
 
   render() {
+    console.log(this.state)
     return (
       <div className="App">
         <header className="banner-header">
           <h1>My Shopping List</h1>
         </header>
         <main>
-          <p>Under Construction...</p>
+          <h2>Add Item</h2>
+          <div>
+                <form onSubmit={this.addItem}>
+                    <label>Item:</label>
+                    <input type="text" value={this.state.newItem.name}
+                      onChange={(event) => this.handleChange(event, 'name')} />
+                    <label>Quantity:</label>
+                    <input type="number" value={this.state.newItem.quantity}
+                      onChange={(event) => this.handleChange(event, 'quantity')} />
+                    <label>Unit:</label>
+                    <input type="text" value={this.state.newItem.unit}
+                       onChange={(event) => this.handleChange(event, 'unit')} />
+                    <button type="submit">Save</button>
+                </form>
+            </div>
           <p>{JSON.stringify(this.state.ourList)}</p>
         </main>
+        {/* Where Input will get exported to */}
       </div>
     );
   }
