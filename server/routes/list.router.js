@@ -36,4 +36,21 @@ router.post('/', (req, res) => {
         })
 })
 
+// PUT route
+router.put('/:id', (req, res) => {
+    let reqId = req.params.id;
+    console.log('PUT request for id', reqId);
+    let sqlText = `UPDATE shopping_list SET purchased='true' WHERE id=$1;`;
+    pool.query(sqlText, [reqId])
+        .then((result) => {
+            console.log('Item updated');
+            res.sendStatus(200);
+        })
+        .catch((error) => {
+            console.log(`Error making database query ${sqlText}`, error);
+            res.sendStatus(500); 
+        })
+})
+
+
 module.exports = router;
