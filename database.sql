@@ -7,9 +7,7 @@ CREATE TABLE shopping_list (
 	"unit" VARCHAR (20) NOT NULL,
 	"purchased" BOOLEAN NOT NULL DEFAULT FALSE
 );
+
 INSERT INTO shopping_list ("name", "quantity", "unit") VALUES ('avocados', 0.75, '4');
-
-INSERT INTO shopping_list ("name", "quantity", "unit")
-VALUES ('ramyeon',  5, 'packs');
-
+INSERT INTO shopping_list ("name", "quantity", "unit") VALUES ('ramyeon',  5, 'packs');
 INSERT INTO shopping_list ("name", "quantity", "unit") VALUES ('apples', 10, 'baskets');

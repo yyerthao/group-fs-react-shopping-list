@@ -55,6 +55,18 @@ class App extends Component {
     })
   }
 
+  updatePurchase = (id) => {
+    axios.put(`/list/${id}`)
+    .then( (response) => {
+      console.log('Response:', response);
+      this.getList()
+    })
+    .catch( (error)=> {
+      alert('Something bad happened');
+      console.log('Error', error)
+    })
+  }
+
   render() {
     console.log(this.state)
     return (
@@ -78,7 +90,16 @@ class App extends Component {
                     <button type="submit">Save</button>
                 </form>
             </div>
-          <p>{JSON.stringify(this.state.ourList)}</p>
+              { this.state.ourList.map(item => (
+                 <div className="item" key={item.id} id={item.id}>
+                   <h2>{item.name}</h2>
+                   <p>{item.quantity} {item.unit}</p>
+                    <button onClick={this.togglePurchase}>{this.state.purchased ? `Purchased` : `Need to Purchase`}</button>
+                      &nbsp;
+                   <button>Remove</button>
+                 </div>
+              ))
+            }
         </main>
         {/* Where Input will get exported to */}
       </div>
