@@ -55,7 +55,8 @@ class App extends Component {
     })
   }
 
-  updatePurchase = (id) => {
+  updatePurchase = (event, id) => {
+
     axios.put(`/list/${id}`)
     .then( (response) => {
       console.log('Response:', response);
@@ -94,14 +95,15 @@ class App extends Component {
                  <div className="item" key={item.id} id={item.id}>
                    <h2>{item.name}</h2>
                    <p>{item.quantity} {item.unit}</p>
-                    <button onClick={this.togglePurchase}>{this.state.purchased ? `Purchased` : `Need to Purchase`}</button>
+                   {/* Pass in event and make into a function calling update purchase
+                   and pass event and item.id */}
+                    <p>{item.purchased ? `Purchased` : <button onClick={(event) => this.updatePurchase(event, item.id)}>Need to Purchase</button>}</p>
                       &nbsp;
                    <button>Remove</button>
                  </div>
               ))
             }
         </main>
-        {/* Where Input will get exported to */}
       </div>
     );
   }

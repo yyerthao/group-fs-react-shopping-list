@@ -10,7 +10,7 @@
     -[x] create GET route
         -[x] items display by name ORDER BY NAME and PURCHASED
     -[x] create POST route
-    -[] PUT route
+    -[x] PUT route
     -[] DELETE route
         -[] conditional to determine which delete button is clicked
 
@@ -24,16 +24,16 @@
     -[x] ComponentDidMount
     -[x] GET route
     -[x] POST route
-    -[] PUT route
+    -[x] PUT route
     -[] DELETE route 
         -[] one route to remove single item
         -[] one route to remove the whole list
 
-    -[] DISPLAY
-        -[] quantity and unit displayed together
-        -[] item name
-        -[] buttons
-            -[] remove 
-            -[] mark as purchased
-                -[] toggle button - item should show that it is purchased
+    -[x] DISPLAY
+        -[x] quantity and unit displayed together
+        -[x] item name
+        -[x] buttons
+            -[x] remove 
+            -[x] mark as purchased
+                -[x] toggle button - item should show that it is purchased
     
